@@ -1,217 +1,24 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Basic meta -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Shiva Ambati — UX Designer</title>
-  <meta name="description" content="UX Designer. Selected works, experience, education, interests. Ex-Samsung • M.Des @ IISc." />
-  <link rel="canonical" href="https://www.shivaambati.com/" />
-  <meta name="robots" content="index,follow" />
-
-  <!-- Social preview: change /result.png to whichever image you prefer for link previews -->
-  <meta property="og:title" content="Shiva Ambati — UX Designer" />
-  <meta property="og:description" content="Selected works, experience, education, interests." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.shivaambati.com/" />
-  <meta property="og:image" content="/result.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="/result.png" />
-
-  <!-- Favicon (already in repo as favicon.png) -->
-  <link rel="icon" href="/favicon.png" type="image/png" />
-
-  <!-- Typeface (Work Sans) -->
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Main styles and scripts -->
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
-
-  <!-- JSON-LD (structured data) — edit social links below if needed -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Shiva Ambati",
-    "jobTitle": "UX Designer",
-    "url": "https://www.shivaambati.com/",
-    "sameAs": [
-      "https://www.linkedin.com/in/shiva-ambati/",
-      "https://medium.com/@shivaambati",
-      "https://www.behance.net/shivaambati"
-    ]
-  }
-  </script>
+  <title>Shiva Ambati — UX Designer (test)</title>
+  <link rel="icon" href="/favicon.png" />
+  <link href="styles.css" rel="stylesheet" />
 </head>
-
-<!--
-  Body class "preload" shows the loader and is removed once the page is ready.
-  Keep this unless you want to remove the loading overlay entirely.
--->
-<body class="preload">
-
-  <!-- Loading overlay: subtle spinner shown on first paint -->
-  <div id="siteLoader" class="site-loader" aria-hidden="true">
-    <div class="loader-inner" aria-hidden="true"></div>
-  </div>
-
-  <!-- Skip link for keyboard users -->
-  <a class="skip-link" href="#content">Skip to content</a>
-
-  <!-- Header + hero (initial layout preserved) -->
-  <header class="site-header container reveal" id="top">
-    <nav class="nav" aria-label="Primary">
-      <a class="brand" href="#top" aria-label="Go to top">shiva ambati</a>
-      <ul class="nav-list">
-        <li><a href="#work">work</a></li>
-        <li><a href="#contact">contact</a></li>
-      </ul>
-    </nav>
-
-    <section class="hero">
-      <div class="hero-grid">
-        <!-- Text block -->
-        <div class="hero-text">
-          <h1 class="title">Hi, I'm <span class="accent">Shiva Ambati</span></h1>
-          <p class="lead">Senior UX Designer • 4yr+<br>Ex-Samsung • M.Des @ IISc</p>
-          <p class="links">
-            <!-- quick links — edit or add more -->
-            <a class="link" href="mailto:shivaambati.design@gmail.com">Contact</a>
-            <a class="link" target="_blank" rel="noopener" href="https://www.linkedin.com/in/shiva-ambati/">LinkedIn</a>
-            <a class="link" target="_blank" rel="noopener" href="https://medium.com/@shivaambati">Medium</a>
-            <a class="link" target="_blank" rel="noopener" href="https://www.behance.net/shivaambati">Behance</a>
-          </p>
-        </div>
-
-        <!-- Media block: profile image loaded lazily via script.js
-             NOTE: this uses /shiva.jpeg (filename in your repo). Replace filename here if needed. -->
-        <div class="hero-media">
-          <img class="profile lazy-img" data-src="/shiva.jpeg" alt="Shiva Ambati portrait" width="360" height="360">
-        </div>
-      </div>
-    </section>
+<body>
+  <header class="container">
+    <h1>Hi, I'm Shiva — test page</h1>
+    <p>This is a no-JS fallback to verify the HTML and CSS are fine.</p>
+    <img src="/shiva.jpeg" alt="profile" style="max-width:300px;">
   </header>
-
-  <!-- Main content -->
-  <main id="content" class="container content">
-    <!-- Experience -->
-    <section id="experience" class="section reveal" aria-labelledby="exp-title">
-      <h2 id="exp-title">experience</h2>
-      <ul class="bullets">
-        <li><strong>Head Digital Works</strong> — Real money gaming</li>
-        <li><strong>Samsung India</strong> — Smartphones (South West Asia)</li>
-        <li><strong>Carestack</strong> — Healthcare for U.S markets</li>
-        <li><strong>Terrific Minds</strong> — Design agency</li>
-      </ul>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="section reveal" aria-labelledby="edu-title">
-      <h2 id="edu-title">education</h2>
-      <ul class="bullets">
-        <li><strong>Indian Institute of Science</strong> — M.Des, Product Design</li>
-        <li><strong>IIITDM Jabalpur</strong> — B.Tech, Mechanical Engineering</li>
-      </ul>
-    </section>
-
-    <!-- Work / Projects -->
-    <section id="work" class="section reveal" aria-labelledby="work-title">
-      <h2 id="work-title">SELECTED WORKS</h2>
-
-      <!-- Container for project cards (populated by script.js from JSON below) -->
-      <div id="projects" class="projects"></div>
-
-      <!-- Modal used for expanded project view (native <dialog>) -->
-      <dialog id="caseModal" aria-labelledby="modalTitle">
-        <article class="modal-card">
-          <header class="modal-header">
-            <h3 id="modalTitle"></h3>
-            <!-- close button — script binds to this -->
-            <button id="closeModal" class="icon-btn" aria-label="Close">✕</button>
-          </header>
-          <div id="modalBody" class="modal-body"></div>
-        </article>
-      </dialog>
-
-      <!-- Project JSON
-           * Edit this JSON to add/remove or update projects.
-           * thumb & hero should be repo-root filenames (we used result.png, tweak.png, medium.png).
-           * Add "details" field (HTML string) if you'd like longer content in the modal.
-      -->
-      <script id="case-data" type="application/json">
-      [
-        {
-          "title": "From Complexity to Clarity: A23 Rummy Game Results",
-          "summary": "Unified 70+ user journeys into a consistent experience that reduced cognitive load and boosted next-game joins.",
-          "year": "2025",
-          "tags": ["rummy","systems"],
-          "thumb": "/result.png",
-          "hero": "/result.png",
-          "links": [{"label":"take a look →", "url":"#"}],
-          "details": "<p>Led discovery, consolidated journeys, and shipped experiments that moved key metrics.</p>"
-        },
-        {
-          "title": "Listening to Gen Z: Insights that Drove 20+ Product Opportunities",
-          "summary": "Co-led Gen-Z research and combined qual + quant to surface opportunities across camera, productivity, health features.",
-          "year": "2024",
-          "tags": ["research","mobile"],
-          "thumb": "/tweak.png",
-          "hero": "/tweak.png",
-          "links": [{"label":"case study →", "url":"#"}],
-          "details": "<p>Diary study + usability sessions informed 20+ prioritized opportunities across product areas.</p>"
-        },
-        {
-          "title": "From Fragmented to Unified: Building a Design System",
-          "summary": "Unifying the experience & design language to deliver consistent experiences across products.",
-          "year": "2024",
-          "tags": ["design system","components"],
-          "thumb": "/medium.png",
-          "hero": "/medium.png",
-          "links": [{"label":"view details →", "url":"#"}],
-          "details": "<p>Designed tokens, component docs, and developer handoffs for cross-product consistency.</p>"
-        }
-      ]
-      </script>
-    </section>
-
-    <!-- Blog / other writing -->
-    <section id="also" class="section reveal" aria-labelledby="also-title">
-      <h2 id="also-title">also did</h2>
-      <p>
-        fantastic products and how to design them (IMO) —
-        <a class="link" target="_blank" rel="noopener" href="https://medium.com/@shivaambati/fantastic-apps-and-how-to-build-them-c2fa76816d63">read on medium →</a>
-      </p>
-    </section>
-
-    <!-- Hobbies / interests -->
-    <section id="interests" class="section reveal" aria-labelledby="int-title">
-      <h2 id="int-title">other interests</h2>
-      <div class="interest">
-        <h3>photography</h3>
-        <p>capturing moments and telling stories through the lens. exploring street photography, portraits, and landscapes.</p>
-      </div>
-      <div class="interest">
-        <h3>music production</h3>
-        <p>creating ambient and electronic soundscapes. experimenting with synthesizers and digital audio workstations.</p>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section reveal" aria-labelledby="contact-title">
-      <h2 id="contact-title">contact</h2>
-      <p class="links">
-        <a class="link" href="mailto:shivaambati.design@gmail.com">Email</a>
-        <a class="link" target="_blank" rel="noopener" href="https://www.linkedin.com/in/shiva-ambati/">LinkedIn</a>
-        <a class="link" target="_blank" rel="noopener" href="https://medium.com/@shivaambati">Medium</a>
-        <a class="link" target="_blank" rel="noopener" href="https://www.behance.net/shivaambati">Behance</a>
-      </p>
-    </section>
+  <main class="container">
+    <h2>Selected projects</h2>
+    <ul>
+      <li>Project A — <img src="/result.png" alt="result" style="max-width:200px;"></li>
+      <li>Project B — <img src="/tweak.png" alt="tweak" style="max-width:200px;"></li>
+    </ul>
   </main>
-
-  <!-- Footer with auto-year (script sets #year) -->
-  <footer class="site-footer container">
-    <small>© <span id="year"></span> Shiva Ambati</small>
-  </footer>
 </body>
 </html>
